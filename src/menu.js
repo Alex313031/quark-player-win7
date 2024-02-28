@@ -11,7 +11,7 @@ module.exports = (app, defaultUserAgent, services, mainWindow, store) => {
   let enabledServicesMenuItems = [];
   let examplePlaceholder;
 
-  // Export app info
+  // Get app info
   const appName = app.getName();
   const appVersion = app.getVersion();
   const userHome = app.getPath('home');
@@ -585,6 +585,15 @@ module.exports = (app, defaultUserAgent, services, mainWindow, store) => {
               electronLog.info('\n Note that JSON must be a recognized file type \n for the OS to open the config.json file.\n');
               store.openInEditor();
             }
+          }
+        },
+        {
+          label: 'Open config.json',
+          click() {
+            electronLog.info('Opening ' + [ userConfigJson ]);
+            const confWindow = new BrowserWindow({ width: 600, height: 700, useContentSize: true, title: userConfigJson });
+            confWindow.loadFile(userConfigJson);
+            confWindow.setBounds({ x: secondaryWindowX });
           }
         },
         {

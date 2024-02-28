@@ -29,7 +29,7 @@
   "devDependencies": {
     "asar": "3.2.0",
     "cross-env": "7.0.3",
-    "electron": "git+https://github.com/castlabs/electron-releases#v25.9.8+wvcus",
+    "electron": "git+https://github.com/castlabs/electron-releases#v22.3.27+wvcus",
     "patch-package": "7.0.2",
     "postinstall-postinstall": "2.1.0",
     "rimraf": "3.0.2"
@@ -49,6 +49,6 @@
     "node-fetch": "2.7.0"
   },
   "resolutions": {
-    "electron": "git+https://github.com/castlabs/electron-releases#v25.9.8+wvcus"
+    "electron": "git+https://github.com/castlabs/electron-releases#v22.3.27+wvcus"
   }
 }

@@ -1,4 +1,4 @@
-/* This is injecting into remote webpages to add a
+/* This is injected into remote webpages to add a
 menubar which can be used to move the window around
 and exit from frameless window on linux where
 the frameless window hides the settings menu.
