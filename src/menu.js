@@ -18,6 +18,7 @@ module.exports = (app, defaultUserAgent, services, mainWindow, store) => {
   const userDataDir = app.getPath('userData');
   const userLogFile = path.join(userDataDir, 'logs/main.log');
   const userMacLogFile = path.join(userHome, 'Library/Logs', appName, 'main.log');
+  const userConfigJson = path.join(userDataDir, 'config.json');
 
   // Globally export what OS we are on
   const isLinux = process.platform === 'linux';
@@ -573,6 +574,15 @@ module.exports = (app, defaultUserAgent, services, mainWindow, store) => {
           }
         },
         {
+          label: 'Open config.json',
+          click() {
+            electronLog.info('Opening ' + [ userConfigJson ]);
+            const confWindow = new BrowserWindow({ width: 600, height: 700, useContentSize: true, title: userConfigJson });
+            confWindow.loadFile(userConfigJson);
+            confWindow.setBounds({ x: secondaryWindowX });
+          }
+        },
+        {
           label: 'Edit Config File',
           click() {
             electronLog.info('Editing Config File');
@@ -585,15 +595,6 @@ module.exports = (app, defaultUserAgent, services, mainWindow, store) => {
               electronLog.info('\n Note that JSON must be a recognized file type \n for the OS to open the config.json file.\n');
               store.openInEditor();
             }
-          }
-        },
-        {
-          label: 'Open config.json',
-          click() {
-            electronLog.info('Opening ' + [ userConfigJson ]);
-            const confWindow = new BrowserWindow({ width: 600, height: 700, useContentSize: true, title: userConfigJson });
-            confWindow.loadFile(userConfigJson);
-            confWindow.setBounds({ x: secondaryWindowX });
           }
         },
         {
