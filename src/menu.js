@@ -1,4 +1,4 @@
-const { app, BrowserWindow, dialog, Menu, screen, shell } = require('electron');
+const { BrowserWindow, dialog, Menu, screen, shell } = require('electron');
 const prompt = require('electron-prompt');
 const path = require('path');
 const fs = require('fs');
