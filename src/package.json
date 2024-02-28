@@ -1,0 +1,54 @@
+{
+  "name": "quark-player",
+  "appName": "quark-player",
+  "productName": "Quark Player",
+  "applicationId": "com.alex313031.quark-player",
+  "version": "3.4.1",
+  "description": "Electron based Web Video Services Player. Supporting Netflix, Youtube, Twitch, Floatplane and More.",
+  "main": "./main.js",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "start": "electron .",
+    "winstart": "electron .",
+    "dev": "cross-env QUARK_TEST=1 NODE_ENV=development ELECTRON_ENABLE_LOGGING=1 electron --enable-logging=file --user-data-dir=../test ./",
+    "burn": "rimraf package-lock.json && npm run clean",
+    "clean": "rimraf node_modules/",
+    "postinstall": "patch-package"
+  },
+  "repository": "https://github.com/Alex313031/quarkplayer.git",
+  "author": "Alex313031 <alex313031@gmail.com>",
+  "homepage": "https://github.com/Alex313031/quarkplayer#readme",
+  "bugs": {
+    "url": "https://github.com/Alex313031/quarkplayer/issues"
+  },
+  "website": "https://thorium.rocks/quark-player",
+  "license": "MIT",
+  "copyright": "Copyright © 2024 Alex313031",
+  "devDependencies": {
+    "asar": "3.2.0",
+    "cross-env": "7.0.3",
+    "electron": "git+https://github.com/castlabs/electron-releases#v25.9.8+wvcus",
+    "patch-package": "7.0.2",
+    "postinstall-postinstall": "2.1.0",
+    "rimraf": "3.0.2"
+  },
+  "dependencies": {
+    "@cliqz/adblocker": "1.26.16",
+    "@cliqz/adblocker-content": "1.26.16",
+    "@cliqz/adblocker-electron": "1.26.16",
+    "@cliqz/adblocker-electron-preload": "1.26.16",
+    "@cliqz/adblocker-extended-selectors": "1.26.16",
+    "@electron/remote": "2.1.2",
+    "electron-context-menu": "3.6.1",
+    "electron-localshortcut": "3.2.1",
+    "electron-log": "5.1.1",
+    "electron-prompt": "1.7.0",
+    "electron-store": "8.1.0",
+    "node-fetch": "2.7.0"
+  },
+  "resolutions": {
+    "electron": "git+https://github.com/castlabs/electron-releases#v25.9.8+wvcus"
+  }
+}

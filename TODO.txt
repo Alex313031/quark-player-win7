@@ -1,0 +1,12 @@
+----TODO----
+
+ - Update Service logos : Partially completed
+
+ - Add Dependency Updates Alerter Bot
+
+------------Notes-----------------
+
+New main accent color: rgba(52, 52, 52, 96%);
+Old main accent color: #AE5EE0
+
+

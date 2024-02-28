@@ -1,0 +1,80 @@
+{
+  "electronVersion": "25.9.8",
+  "electronDownload": {
+    "version": "25.9.8+wvcus",
+    "mirror": "https://github.com/castlabs/electron-releases/releases/download/v"
+  },
+  "asar": true,
+  "productName": "Quark Player",
+  "appId": "com.alex313031.quark-player",
+  "copyright": "Copyright © 2024 Alex313031",
+  "generateUpdatesFilesForAllChannels": false,
+  "directories": {
+      "app": "src",
+      "buildResources": "build",
+      "output": "dist"
+  },
+  "files": [ "**/*" ],
+  "asarUnpack": [ "default-services.js" ],
+  "extraFiles": [
+    {
+      "from": "assets/icon.png"
+    },
+    {
+      "from": "assets/README.txt"
+    }
+  ],
+  "linux": {
+    "target": [
+      "zip",
+      "deb",
+      "rpm",
+      "appimage"
+    ],
+    "icon": "build/icons",
+    "maintainer": "Alex313031",
+    "vendor": "Alex313031",
+    "synopsis": "Electron based Web Video Services Player. Supporting Netflix, Youtube, Twitch, Floatplane and More.",
+    "category": "Network;Browser;Media;AudioVideo;",
+    "executableName": "quark-player",
+    "artifactName": "quark-player_${version}_${arch}.${ext}",
+    "desktop": {
+      "Name": "Quark Player",
+      "StartupWMClass": "quark-player",
+      "Keywords": "electron;netflix;media;quark;",
+      "Icon": "quark-player"
+    }
+  },
+  "win": {
+    "icon": "build/icon.ico",
+    "target": [
+      "zip",
+      "portable",
+      "nsis"
+    ],
+    "publisherName": "Alex313031",
+    "executableName": "quark_player",
+    "artifactName": "quark_player_win64_${version}_${arch}.${ext}"
+  },
+  "nsis": {
+    "shortcutName": "Quark Player",
+    "artifactName": "quark_player_setup_${version}_${arch}.${ext}",
+    "uninstallDisplayName": "Quark Player ${version}",
+    "deleteAppDataOnUninstall": false,
+    "oneClick": false,
+    "allowToChangeInstallationDirectory": true
+  },
+  "portable": {
+    "artifactName": "quark_player_portable_win64_${version}_${arch}.${ext}"
+  },
+  "mac": {
+    "category": "public.app-category.entertainment",
+    "icon": "build/icon.icns",
+    "darkModeSupport": true,
+    "artifactName": "quark_player_${version}_macos_${arch}.${ext}",
+    "target": [
+      "dmg",
+      "zip"
+    ]
+  }
+}

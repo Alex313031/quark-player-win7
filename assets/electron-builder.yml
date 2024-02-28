@@ -1,0 +1,16 @@
+appId: me.otbeaumont.ElectronPlayer
+mac:
+  category: public.app-category.entertainment
+win:
+  target: msi
+snap:
+  plugs:
+    - default
+    - screen-inhibit-control
+linux:
+  category: Video
+  target:
+    - AppImage
+    - snap
+electronDownload:
+  mirror: https://github.com/castlabs/electron-releases/releases/download/v

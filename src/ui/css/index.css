@@ -1,0 +1,151 @@
+html {
+  font-family: Roboto, sans-serif;
+}
+* {
+  box-sizing: border-box;
+}
+@media (prefers-color-scheme: light) {
+  :root {
+    --bgcolor: rgba(232, 232, 232, 96%);
+    --textcolor: #000;
+    --border: rgba(52, 52, 52, 96%);
+    --service-hover: rgba(0, 0, 0, 0.1);
+    --service-active: rgba(32, 32, 32, 0.2);
+    --service-shadow: rgba(0, 0, 0, 0.3);
+    --h3-select: #0e7eea;
+  }
+}
+:root.light {
+  --bgcolor: rgba(232, 232, 232, 96%);
+  --textcolor: #000;
+  --border: rgba(52, 52, 52, 96%);
+  --service-hover: rgba(0, 0, 0, 0.1);
+  --service-active: rgba(32, 32, 32, 0.2);
+  --service-shadow: rgba(0, 0, 0, 0.3);
+  --h3-select: #0e7eea;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bgcolor: rgba(52, 52, 52, 96%);
+    --textcolor: #fff;
+    --border: rgba(128, 128, 128, 96%);
+    --service-hover: rgba(100, 100, 100, 0.1);
+    --service-active: rgba(132, 132, 132, 0.1);
+    --service-shadow: rgba(0, 0, 0, 0.4);
+    --h3-select: #8ab4f8;
+  }
+}
+:root.dark {
+  --bgcolor: rgba(52, 52, 52, 96%);
+  --textcolor: #fff;
+  --border: rgba(128, 128, 128, 96%);
+  --service-hover: rgba(100, 100, 100, 0.1);
+  --service-active: rgba(132, 132, 132, 0.1);
+  --service-shadow: rgba(0, 0, 0, 0.4);
+  --h3-select: #8ab4f8;
+}
+hr {
+  background-color: var(--border);
+  height: 2px;
+  border: none;
+}
+body {
+  -webkit-app-region: drag;
+  margin: 0;
+  background-color: var(--bgcolor);
+  display: grid;
+  height: 100vh;
+  font-family: Roboto, sans-serif;
+}
+h3 {
+  font-family: Roboto, sans-serif;
+  font-weight: 600;
+}
+.services {
+  width: 90%;
+  min-height: 200px;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  box-shadow: 1px 30px 30px var(--service-shadow);
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  transition: opacity 0.3s cubic-bezier(0.86, 0, 0.07, 1); /* easeInOutQuint */
+}
+body.loading .services {
+  transform: scale(0);
+  opacity: 0;
+}
+.services.loading {
+  opacity: 0;
+}
+.services > .service {
+  flex: 1;
+  padding: 30px 20px;
+  border-radius: 12px;
+  margin: 4px;
+  text-decoration: none;
+  cursor: pointer;
+  -webkit-user-drag: none;
+  -webkit-app-region: no-drag;
+}
+.services > .service:hover {
+  background-color: var(--service-hover);
+}
+.services > .service:active {
+  background-color: var(--service-active);
+}
+.loader > img,
+.services > .service > img {
+  margin: 0 auto;
+  display: block;
+  max-height: 128px;
+  max-width: 256px;
+  height: auto;
+  width: auto;
+  padding: 5px 0;
+  -webkit-user-drag: none;
+  -webkit-app-region: no-drag;
+}
+.services > .service > h3 {
+  margin: 0;
+  padding-top: 5px;
+  text-align: center;
+  color: var(--textcolor);
+  -webkit-user-drag: none;
+  -webkit-app-region: no-drag;
+}
+.services > .service:active > .h3select {
+  color: var(--h3-select);
+}
+.loader {
+  position: fixed;
+  transition: all 0.2s cubic-bezier(0.23, 1, 0.32, 1); /* easeOutQuint */
+  z-index: 100;
+}
+.loader > .ripple {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  animation: ripple 0.75s 0.2s cubic-bezier(0.23, 1, 0.32, 1) infinite; /* easeOutQuint */
+  background-color: white; /* will be replaced later by JS */
+  z-index: -1;
+  transform-origin: top left;
+  transform: scale(0) translate(-50%, -50%);
+}
+@keyframes ripple {
+  from {
+    opacity: 1;
+    transform: scale(0) translate(-50%, -50%);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale(1) translate(-50%, -50%);
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "name": "quark-player",
+  "appName": "quark-player",
+  "productName": "Quark Player",
+  "applicationId": "com.alex313031.quark-player",
+  "version": "3.4.1",
+  "description": "Electron based Web Video Services Player. Supporting Netflix, Youtube, Twitch, Floatplane and More.",
+  "main": "./src/main.js",
+  "engines": {
+    "node": ">=16"
+  },
+  "scripts": {
+    "start": "electron ./src",
+    "winstart": "electron src",
+    "test": "npm run eslint ; npm run stylelint",
+    "lint": "npm run eslint ; npm run stylelint",
+    "burn": "rimraf package-lock.json && rimraf src/package-lock.json && npm run clean",
+    "clean": "rimraf dist/ && rimraf test/ && rimraf src/node_modules/ && rimraf node_modules/",
+    "distclean": "rimraf dist",
+    "eslint": "eslint \"src/**/*.js*\"",
+    "stylelint": "stylelint \"src/**/*.css*\"",
+    "build": "cross-env NODE_ENV=production electron-builder --dir",
+    "buildWin": "cross-env NODE_ENV=production electron-builder -w --x64 --dir && cross-env NODE_ENV=production electron-builder -w --ia32 --dir",
+    "buildMac": "cross-env NODE_ENV=production electron-builder -m --x64 --dir && cross-env NODE_ENV=production electron-builder -m --arm64 --dir",
+    "dev": "npm run test && cross-env QUARK_TEST=1 NODE_ENV=development ELECTRON_ENABLE_LOGGING=1 electron --enable-logging=file --user-data-dir=./test ./src",
+    "buildstart": "cross-env NODE_ENV=production electron-builder --dir && ./dist/linux-unpacked/quark-player",
+    "distLinux": "cross-env NODE_ENV=production electron-builder -l",
+    "distWin": "cross-env NODE_ENV=production electron-builder -w --x64 --pd dist/win-unpacked && cross-env NODE_ENV=production electron-builder -w --ia32 --pd dist/win-ia32-unpacked",
+    "distMac": "cross-env NODE_ENV=production electron-builder -m --x64 --pd dist/mac && cross-env NODE_ENV=production electron-builder -m --arm64 --pd dist/mac-arm64",
+    "sign": "python3 -m castlabs_evs.vmp sign-pkg dist/win-unpacked",
+    "postinstall": "patch-package && electron-builder install-app-deps"
+  },
+  "repository": "https://github.com/Alex313031/quarkplayer.git",
+  "author": "Alex313031 <alex313031@gmail.com>",
+  "homepage": "https://github.com/Alex313031/quarkplayer#readme",
+  "bugs": {
+    "url": "https://github.com/Alex313031/quarkplayer/issues"
+  },
+  "website": "https://thorium.rocks/quark-player",
+  "license": "MIT",
+  "copyright": "Copyright © 2024 Alex313031",
+  "devDependencies": {
+    "asar": "3.2.0",
+    "cross-env": "7.0.3",
+    "electron": "git+https://github.com/castlabs/electron-releases#v25.9.8+wvcus",
+    "electron-builder": "23.6.0",
+    "eslint": "8.44.0",
+    "patch-package": "7.0.2",
+    "postinstall-postinstall": "2.1.0",
+    "rimraf": "3.0.2",
+    "stylelint": "14.16.1",
+    "stylelint-config-standard": "29.0.0"
+  },
+  "dependencies": {
+    "@cliqz/adblocker": "1.26.16",
+    "@cliqz/adblocker-content": "1.26.16",
+    "@cliqz/adblocker-electron": "1.26.16",
+    "@cliqz/adblocker-electron-preload": "1.26.16",
+    "@cliqz/adblocker-extended-selectors": "1.26.16",
+    "@electron/remote": "2.1.2",
+    "electron-context-menu": "3.6.1",
+    "electron-localshortcut": "3.2.1",
+    "electron-log": "5.1.1",
+    "electron-prompt": "1.7.0",
+    "electron-store": "8.1.0",
+    "node-fetch": "2.7.0"
+  },
+  "resolutions": {
+    "electron": "git+https://github.com/castlabs/electron-releases#v25.9.8+wvcus"
+  }
+}

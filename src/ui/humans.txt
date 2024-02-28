@@ -1,0 +1,37 @@
+## quark-player humans.txt ##
+
+# Copyright (c) 2024 Alex313031.
+# https://humanstxt.org/
+
+/* ABOUT */
+
+	Developer: Alexander Frick
+	Role: Main Developer
+	Twitter: @alex313031
+	GitHub: @Alex313031
+	Email: alex313031@gmail.com
+	Website: https://thorium.rocks/
+	From: Oklahoma, US
+
+	Developer: Oscar Beaumont
+	Role: Original Developer
+	Twitter: @oscartbeaumont
+	GitHub: @oscartbeaumont
+	Email: oscar@otbeaumont.me
+	Website: https://otbeaumont.me/
+	From: Australia
+
+/* THANKS */
+
+	sindresorhus
+	AR-CADE
+	oscartbeaumont
+	castlabs
+	electronjs
+
+/* WEBUI */
+
+	Last update: 2024/02/27
+	Language: English
+	Doctype: HTML5, CSS, JSON
+	IDE: Geany

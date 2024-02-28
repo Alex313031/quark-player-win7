@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Quark Player</title>
+    <link rel="icon" type="image/png" sizes="48x48" href="./favicon48.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon16.png">
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self' 'unsafe-inline'; img-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https: data: http:;"
+    />
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="./css/scrollbar.css">
+  </head>
+  <body>
+      <!-- <tab-group new-tab-button="true" sortable="true"></tab-group> -->
+      <div class="services"></div>
+
+      <script src="./index.js"></script>
+      <!-- <script src="../node_modules/electron-tabs/dist/electron-tabs.js"></script>
+
+      <script>
+        // Select tab-group
+        const tabGroup = document.querySelector("tab-group");
+
+        // Setup the default tab which is created when the "New Tab" button is clicked
+        tabGroup.setDefaultTab({
+          title: "Index",
+          src: "https://www.npmjs.com/package/electron-tabs",
+          active: true
+        });
+
+        // Do stuff
+        const tab = tabGroup.addTab({
+          title: "electron-tabs on NPM",
+          src: "https://www.npmjs.com/package/electron-tabs"
+        });
+        const pos = tab.getPosition();
+        console.log("Tab position is " + pos);
+      </script> -->
+  </body>
+</html>
