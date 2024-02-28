@@ -7,7 +7,7 @@
   "description": "Electron based Web Video Services Player. Supporting Netflix, Youtube, Twitch, Floatplane and More.",
   "main": "./main.js",
   "engines": {
-    "node": ">=16"
+    "node": ">=14"
   },
   "scripts": {
     "start": "electron .",

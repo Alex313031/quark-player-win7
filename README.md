@@ -29,11 +29,11 @@ _The app's main menu interface_
 
 # Installation
 
+*__NOTE:__ This repo is for old OSes like Windows 7/8/8.1, and old Linux versions like Ubuntu 16.04/Debian 8. For the regular Quark Player version, see [the main repo](https://github.com/Alex313031/quark-player).*
+
 ## Windows
 
 There are .exe installers, and portable .zips in [Releases](https://github.com/Alex313031/quarkplayer/releases).
-
-*__NOTE:__ The last version for Windows 7/8/8.1 is [v3.3.5](https://github.com/Alex313031/quark-player/releases/tag/v3.3.5)*
 
 ## Linux
 
@@ -41,7 +41,7 @@ There are .deb installers, .AppImages, and portable .zips in [Releases](https://
 
 ## MacOS
 
-Working on it. Need a Mac to build.
+There are builds for both x64 and arm64 Macs.
 
 # Developing/Building
 
