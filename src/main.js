@@ -935,10 +935,10 @@ app.on('restart', () => {
 // Emitted from certain menu items that require an BrowserWindow reload
 app.on('relaunch-confirm', () => {
   dialog.showMessageBox(mainWindow, {
-    'type': 'question',
-    'title': 'Relaunch Confirmation',
-    'message': 'Are you sure you want to relaunch Quark Player?',
-    'buttons': [
+    type: 'question',
+    title: 'Relaunch Confirmation',
+    message: 'Are you sure you want to relaunch Quark Player?',
+    buttons: [
       'Yes',
       'No'
     ]
@@ -946,68 +946,63 @@ app.on('relaunch-confirm', () => {
   // Dialog returns a promise so let's handle it correctly
   .then((result) => {
     // Bail if the user pressed "No" or escaped (ESC) from the dialog box
-    if (result.response !== 0) { return; }
+    if (result.response !== 0) {
+      return;
+    }
     // Testing.
     if (result.response === 0) {
-      //console.log('The "Yes" button was pressed (main process)');
       //app.relaunch();
       //app.quit();
       app.emit('relaunch');
     }
-  })
+  });
 });
 
 // Dialog box asking if user really wants to restart app
 // Emitted from certain menu items that require an Electron restart
 app.on('restart-confirm', () => {
   dialog.showMessageBox(mainWindow, {
-    'type': 'question',
-    'title': 'Restart Confirmation',
-    'message': 'Are you sure you want to restart Quark Player?',
-    'buttons': [
+    type: 'question',
+    title: 'Restart Confirmation',
+    message: 'Are you sure you want to restart Quark Player?',
+    buttons: [
       'Yes',
       'No'
     ]
   })
-  // Dialog returns a promise so let's handle it correctly
   .then((result) => {
-    // Bail if the user pressed "No" or escaped (ESC) from the dialog box
-    if (result.response !== 0) { return; }
-    // Testing.
+    if (result.response !== 0) {
+      return;
+    }
     if (result.response === 0) {
-      //console.log('The "Yes" button was pressed (main process)');
-      //app.relaunch();
-      //app.quit();
       app.emit('restart');
     }
-  })
+  });
 });
 
 // Same as the above except used when resetting settings
 app.on('reset-confirm', () => {
-    dialog.showMessageBox(mainWindow, {
-        'type': 'question',
-        'title': 'Settings Reset Confirmation',
-        'message': 'Are you sure you want to reset *All* \nsettings to their defaults?',
-        'buttons': [
-            'Yes',
-            'No'
-        ]
-    })
-      // Dialog returns a promise so let's handle it correctly
-      .then((result) => {
-          // Bail if the user pressed "No" or escaped (ESC) from the dialog box
-          if (result.response !== 0) { return; }
-          // Testing.
-          if (result.response === 0) {
-              //console.log('The "Yes" button was pressed (main process)');
-              app.relaunch();
-              app.quit();
-              app.emit('relaunch');
-              electronLog.warn('Note: Reset *All* Settings.');
-          }
-      })
-})
+  dialog.showMessageBox(mainWindow, {
+    type: 'question',
+    title: 'Settings Reset Confirmation',
+    message: 'Are you sure you want to reset *All* \nsettings to their defaults?',
+    buttons: [
+      'Yes',
+      'No'
+    ]
+  })
+  .then((result) => {
+    if (result.response !== 0) {
+      return;
+    }
+    if (result.response === 0) {
+      app.relaunch();
+      app.quit();
+      app.emit('relaunch');
+      electronLog.warn('Note: Reset *All* Settings.');
+    }
+  });
+});
 
 // Navigate to given URL when told to by the UI
 ipcMain.on('open-url', (e, service) => {
