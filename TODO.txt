@@ -2,6 +2,8 @@
 
  - Update Service logos : Partially completed
 
+    "electron-localshortcut": "3.2.1",
+
  - Add Dependency Updates Alerter Bot
 
 ------------Notes-----------------

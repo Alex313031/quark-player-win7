@@ -540,7 +540,7 @@ module.exports = (app, defaultUserAgent, services, mainWindow, store) => {
           accelerator: 'CmdorCtrl+W',
           click(item, focusedWindow) {
             if (focusedWindow) focusedWindow.close();
-            electronLog.info('Closed a Window');
+            electronLog.info('Closed a window');
           }
         }
       ]
