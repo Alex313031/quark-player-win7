@@ -20,6 +20,7 @@ const headerScript = fs.readFileSync(
 require('@electron/remote/main').initialize();
 
 // Restrict main.log size to 100Kb
+electronLog.initialize();
 electronLog.transports.file.maxSize = 1024 * 100;
 
 // Create Global Variables
@@ -246,7 +247,7 @@ async function createWindow() {
           position: mainWindow.getPosition(),
           size: mainWindow.getSize()
         });
-        electronLog.info('Saved windowDetails.');
+        electronLog.info('Saved windowDetails');
       } else {
         electronLog.error('Error: Window was not defined while trying to save windowDetails.');
         return;
