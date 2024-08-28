@@ -713,6 +713,7 @@ module.exports = (app, defaultUserAgent, services, mainWindow, store) => {
       label: 'About',
       submenu: [
         { label: appName + ' v' + appVersion, enabled: false },
+        { type: 'separator' },
         {
           label: 'Created by Oscar Beaumont &&',
           click() {
